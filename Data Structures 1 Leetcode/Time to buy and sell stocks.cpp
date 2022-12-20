@@ -21,6 +21,30 @@ Constraints:
 0 <= prices[i] <= 104
 */
 
+class Solution
+{
+public:
+    int maxProfit(vector<int> &prices)
+    {
+        int buy_p = prices[0];
+        int profit = 0;
+        for (int i = 0; i < prices.size(); i++)
+        {
+            if (buy_p > prices[i])
+            {
+                buy_p = prices[i];
+            }
+            else if (prices[i] - buy_p > profit)
+            {
+                profit = prices[i] - buy_p;
+            }
+        }
+
+        return profit;
+    }
+};
+// runtime  361ms and memory 93.4MB Not the best of solutions
+
 // Brute force method - will give TLE
 /*
 class Solution {
