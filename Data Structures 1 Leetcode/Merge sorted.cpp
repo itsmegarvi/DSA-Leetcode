@@ -40,9 +40,55 @@ nums2.length == n
 Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 */
 
+// try 3 : Still runtime error and 4/59
+
+class Solution
+{
+public:
+    void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
+    {
+        if (nums1[0] == 0)
+        {
+            nums1 = nums2;
+        }
+        else if (nums2.empty())
+        {
+        }
+        else
+        {
+            for (int i = 0; i < m + n; i++)
+            {
+                if (nums1[i] > nums2[0])
+                {
+                    nums1.insert(nums1.begin() + i, nums2[0]);
+                    nums2.erase(nums2.begin());
+                    nums1.pop_back();
+                    continue;
+                }
+                else
+                {
+                    if (nums1[i] == 0)
+                    {
+                        nums1[i] = nums2[0];
+                        nums2.erase(nums2.begin());
+                        continue;
+                    }
+                }
+            }
+
+            /*if(nums1.size()>m+n){
+                while(nums1.size()!=m+n){
+                    nums1.pop_back();
+                }
+            }*/
+        }
+    }
+};
+
 // try 2
 // Runtime Error  4/59 cases right
 
+/*
 class Solution
 {
 public:
@@ -84,6 +130,7 @@ public:
         }
     }
 };
+*/
 
 // try 1
 /*
