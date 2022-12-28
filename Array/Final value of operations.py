@@ -44,6 +44,9 @@ operations[i] will be either "++X", "X++", "--X", or "X--".
 """
 
 
+from ast import List
+
+
 class Solution:
     def finalValueAfterOperations(self, operations: List[str]) -> int:
         count = 0
