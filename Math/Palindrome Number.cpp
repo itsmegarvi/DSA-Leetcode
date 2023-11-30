@@ -40,3 +40,22 @@ public:
 };
 
 // runtime 15ms(beats 20.29%) and memory 6.21mb(beats Beats 74.87% %)
+
+//Alternate solution 
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0 ||(x!=0 && x%10 == 0)){
+            return false;
+        }
+        int reversed = 0;
+        while(x > reversed){
+            reversed = reversed*10 + x%10;
+            x /= 10;
+        }
+        return (x==reversed) || (x == reversed/10);
+    }
+};
+
+// runtime 7ms(beats 72.05%) and memory 6.33mb(beats Beats 39.87% %)
