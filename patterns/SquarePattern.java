@@ -26,17 +26,17 @@ package patterns;
  * Your Task: You don't need to input anything. Complete the function printSquare() which takes  an integer n  as the input parameter and print the pattern.
  */
 
-class SquarePattern{
+class SquarePattern {
 
-    public void printSquare(int n){
+    public void printSquare(int n) {
         String str = "";
-        if(n==1){
+        if (n == 1) {
             System.out.println("*");
             return;
         }
-        for(int i=0; i<n;i++){
-            for(int j = 0; j<n-1;j++){
-                str +="* ";
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - 1; j++) {
+                str += "* ";
             }
             str += "*";
             System.out.println(str);
